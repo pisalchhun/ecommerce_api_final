@@ -1,13 +1,23 @@
 from datetime import datetime
-
 from app import app, db
 from flask import jsonify, request
 from sqlalchemy import text
 from model.category import Category
-from route.admin.required import admin_required
+from functools import wraps
+from flask_jwt_extended import verify_jwt_in_request, get_jwt_identity, get_jwt
 
 
+def admin_required(fn):
+    @wraps(fn)
+    def wrapper(*args, **kwargs):
+        verify_jwt_in_request()
+        claims = get_jwt()
+        if claims.get("role") != "admin":
+            return jsonify({"message": "Admin access required"}), 403
+        return fn(*args, **kwargs)
+    return wrapper
 @app.get('/api/category')
+@admin_required
 def get_category():
     sql = text("SELECT id,  UPPER(SUBSTR(name, 1, 1)) || LOWER(SUBSTR(name, 2)) AS name, 'true' as active,create_at FROM category")
     result = db.session.execute(sql).fetchall()
@@ -17,6 +27,7 @@ def get_category():
     return jsonify(rows)
 
 @app.get('/api/category/list')
+@admin_required
 def get_all_category():
     sql = text("SELECT id,  UPPER(SUBSTR(name, 1, 1)) || LOWER(SUBSTR(name, 2)) AS name, 'true' as active,create_at FROM category")
     result = db.session.execute(sql).fetchall()

@@ -1,0 +1,12 @@
+
+__pycache__/
+*.pyc
+
+venv/
+
+instance/
+
+migrations/**/__pycache__/
+
+.DS_Store
+Thumbs.db

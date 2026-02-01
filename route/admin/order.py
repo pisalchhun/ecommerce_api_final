@@ -1,8 +1,18 @@
 from flask import jsonify, request
 from sqlalchemy import text
 from app import app, db
-from route.admin.required import admin_required
+from functools import wraps
+from flask_jwt_extended import verify_jwt_in_request, get_jwt_identity, get_jwt
 
+def admin_required(fn):
+    @wraps(fn)
+    def wrapper(*args, **kwargs):
+        verify_jwt_in_request()
+        claims = get_jwt()
+        if claims.get("role") != "admin":
+            return jsonify({"message": "Admin access required"}), 403
+        return fn(*args, **kwargs)
+    return wrapper
 @app.get('/api/admin/orders/dashboard')
 @admin_required
 def admin_dashboard():

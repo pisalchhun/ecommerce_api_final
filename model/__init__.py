@@ -5,4 +5,3 @@ from model.product import Product
 from model.user import User
 from model.order import Order
 from model.order_Item import OrderItem
-from model.order_status_history import OrderStatusHistory

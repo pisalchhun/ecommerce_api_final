@@ -19,7 +19,6 @@ def login_required(fn):
 @app.get('/api/track-orders/<int:order_id>')
 @login_required
 def track_order(order_id):
-    # Find the order
     order = Order.query.filter_by(id=order_id).first()
     if not order:
         return jsonify({'error': f'Order id {order_id} not found'}), 404

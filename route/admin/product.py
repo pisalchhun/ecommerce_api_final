@@ -7,8 +7,18 @@ from model.product import Product
 from werkzeug.utils import secure_filename
 import os
 from flask import jsonify
+from functools import wraps
+from flask_jwt_extended import verify_jwt_in_request, get_jwt_identity, get_jwt
 
-from route.admin.required import admin_required
+def admin_required(fn):
+    @wraps(fn)
+    def wrapper(*args, **kwargs):
+        verify_jwt_in_request()
+        claims = get_jwt()
+        if claims.get("role") != "admin":
+            return jsonify({"message": "Admin access required"}), 403
+        return fn(*args, **kwargs)
+    return wrapper
 
 def get_full_image_url(image_path):
     if not image_path:
