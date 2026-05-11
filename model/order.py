@@ -10,5 +10,3 @@ class Order(db.Model):
     shipping_address = db.Column(db.String(255))
     create_at = db.Column(db.Date, default=date.today)
     items = db.relationship('OrderItem', backref='order', lazy=True)
-    status_history = db.relationship('OrderStatusHistory', backref='order', lazy=True)
-

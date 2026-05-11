@@ -1,10 +1,19 @@
 
+venv/
+.venv/
+
 __pycache__/
 *.pyc
 
-venv/
+
+.env
+
 
 instance/
+
+
+.vscode/
+.idea/
 
 migrations/**/__pycache__/
 

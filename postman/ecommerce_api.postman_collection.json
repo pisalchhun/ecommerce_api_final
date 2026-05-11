@@ -1,0 +1,1571 @@
+{
+  "info": {
+    "_postman_id": "2f687f6f-c700-482c-970c-0a992f146a00",
+    "name": "ecommerce_api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "49071611",
+    "_collection_link": "https://go.postman.co/collection/49071611-2f687f6f-c700-482c-970c-0a992f146a00?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "AdminPanel",
+      "item": [
+        {
+          "name": "product",
+          "item": [
+            {
+              "name": "ListProduct",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2OTc3NzIyMywianRpIjoiZDA1YjlmZGYtOGQzYS00ZTZlLWFhMGQtMzdkOGY4Y2ZiZjIyIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3Njk3NzcyMjMsImNzcmYiOiIxMTk0YThlOC1jODgyLTRlMWYtYjBlYy0yNDUwZThhNzIwNjYiLCJleHAiOjE3Njk3NzgxMjMsImlkIjoiMiIsIm5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW4xMjNAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIn0.bxgV2WPXmTlcvwth4Y_MvIbjA_aualzmDLNK3XVwe-8",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/products/list",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "products",
+                    "list"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "CreateProduct",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2OTc3NzIyMywianRpIjoiZDA1YjlmZGYtOGQzYS00ZTZlLWFhMGQtMzdkOGY4Y2ZiZjIyIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3Njk3NzcyMjMsImNzcmYiOiIxMTk0YThlOC1jODgyLTRlMWYtYjBlYy0yNDUwZThhNzIwNjYiLCJleHAiOjE3Njk3NzgxMjMsImlkIjoiMiIsIm5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW4xMjNAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIn0.bxgV2WPXmTlcvwth4Y_MvIbjA_aualzmDLNK3XVwe-8",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"&honey hair oil\",\r\n    \"price\": 16.12,\r\n    \"stock\": 5,\r\n    \"description\": \"&honey series is the most popular honey-based cosmetic brand in Japan.\",\r\n    \"image\": \"4.jpg\",\r\n    \"category_id\": 3,\r\n    \"create_at\": \"30-01-2026\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/admin/products/create",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "admin",
+                    "products",
+                    "create"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "UpdateProduct",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2OTc3NDQ0OCwianRpIjoiMDE4MGVhYzItZjBiNy00OWNiLTg0YTgtYTJkODE4YTQzMDFhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjUiLCJuYmYiOjE3Njk3NzQ0NDgsImNzcmYiOiJhZWU1ZGVjNy1jYTI2LTQ5MjItYmU5Ni05Y2JmZDMyZjdlZWIiLCJleHAiOjE3Njk3NzUzNDgsImlkIjoiNSIsIm5hbWUiOiJqYXkiLCJlbWFpbCI6ImpheTEyM0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4ifQ.HPDPN41hEqzSSYsije2rs9tl0Rv8A83wt0zzbbgq3k4",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{ \r\n    \"id\": \"\",\r\n    \"name\": \"\",\r\n    \"price\":\"\" ,\r\n    \"stock\":\"\" ,\r\n    \"description\": \"\",\r\n    \"image\": \"/static/image/\",\r\n    \"category_id\":\"\" ,\r\n    \"create_at\": \"\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000//api/admin/productS/update/1",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "",
+                    "api",
+                    "admin",
+                    "productS",
+                    "update",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "DeleteProduct",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2OTc3NzIyMywianRpIjoiZDA1YjlmZGYtOGQzYS00ZTZlLWFhMGQtMzdkOGY4Y2ZiZjIyIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3Njk3NzcyMjMsImNzcmYiOiIxMTk0YThlOC1jODgyLTRlMWYtYjBlYy0yNDUwZThhNzIwNjYiLCJleHAiOjE3Njk3NzgxMjMsImlkIjoiMiIsIm5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW4xMjNAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIn0.bxgV2WPXmTlcvwth4Y_MvIbjA_aualzmDLNK3XVwe-8",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"product_id\":\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/admin/products/delete",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "admin",
+                    "products",
+                    "delete"
+                  ],
+                  "query": [
+                    {
+                      "key": "",
+                      "value": null,
+                      "type": "text",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "order",
+          "item": [
+            {
+              "name": "ListOrder",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2OTc3ODQxNywianRpIjoiNDMzNzJiMDMtOWFiNC00MjRlLTk0MjEtMGQ1NGE5YmRjMTg5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3Njk3Nzg0MTcsImNzcmYiOiIwZDRmYTAzZi04YzAzLTQ5ZTMtOTZiNS1mMzE0NWI5NDQ3MDQiLCJleHAiOjE3Njk3NzkzMTcsImlkIjoiMiIsIm5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW4xMjNAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIn0.Qx2lRtFxNXehPnKR6dn7c-dEnSvdYVl--ryNFCkSP0M",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/admin/orders",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "admin",
+                    "orders"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "UpdateOrder",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2OTc3ODYwMywianRpIjoiNzFiZmFmMzEtYjVkYy00MmEyLWJkY2QtNDY1OTA5ZmNkYzAxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3Njk3Nzg2MDMsImNzcmYiOiJhOTMxYzEwMi0xYmYxLTRkOWUtOTZkZC1lMzgyYzM1MzNkMTQiLCJleHAiOjE3Njk3Nzk1MDMsImlkIjoiMiIsIm5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW4xMjNAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIn0.gnmsbXV7IcWhGOe1I7NtXmp639gpFgQdxX45NYOte70",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{ \r\n    \"status\": \"\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000//api/admin/orders/1/status",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "",
+                    "api",
+                    "admin",
+                    "orders",
+                    "1",
+                    "status"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "DeleteOrder",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2OTc3ODYwMywianRpIjoiNzFiZmFmMzEtYjVkYy00MmEyLWJkY2QtNDY1OTA5ZmNkYzAxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3Njk3Nzg2MDMsImNzcmYiOiJhOTMxYzEwMi0xYmYxLTRkOWUtOTZkZC1lMzgyYzM1MzNkMTQiLCJleHAiOjE3Njk3Nzk1MDMsImlkIjoiMiIsIm5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW4xMjNAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIn0.gnmsbXV7IcWhGOe1I7NtXmp639gpFgQdxX45NYOte70",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \r\n\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/admin/orders/2",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "admin",
+                    "orders",
+                    "2"
+                  ],
+                  "query": [
+                    {
+                      "key": "",
+                      "value": null,
+                      "type": "text",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Category",
+          "item": [
+            {
+              "name": "ListCategory",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/category/list",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "category",
+                    "list"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "CreateCategory",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2OTc3NjI3NCwianRpIjoiZDY5ZGFlZWItN2JiZC00NjNkLWJiNWMtYjdiMDg5ZTcxNjQ3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3Njk3NzYyNzQsImNzcmYiOiI3ZjRjNDA0NS0wNTI0LTQxNzAtOTYwNi1iYmEwM2ExNmI3NDQiLCJleHAiOjE3Njk3NzcxNzQsImlkIjoiMiIsIm5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW4xMjNAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIn0.27grAgwUuOX7eevD3ZJRSObWBWFWrKRIB_quBnudoEc",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n     \"name\": \"\"  \r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/category/create",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "category",
+                    "create"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "UpdateCategory",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2OTc3NjI3NCwianRpIjoiZDY5ZGFlZWItN2JiZC00NjNkLWJiNWMtYjdiMDg5ZTcxNjQ3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3Njk3NzYyNzQsImNzcmYiOiI3ZjRjNDA0NS0wNTI0LTQxNzAtOTYwNi1iYmEwM2ExNmI3NDQiLCJleHAiOjE3Njk3NzcxNzQsImlkIjoiMiIsIm5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW4xMjNAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIn0.27grAgwUuOX7eevD3ZJRSObWBWFWrKRIB_quBnudoEc",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{ \r\n    \"category_id\": ,\r\n    \"name\": \"\"\r\n\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/category/update",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "category",
+                    "update"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "DeleteCategory",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2OTc3NjI3NCwianRpIjoiZDY5ZGFlZWItN2JiZC00NjNkLWJiNWMtYjdiMDg5ZTcxNjQ3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3Njk3NzYyNzQsImNzcmYiOiI3ZjRjNDA0NS0wNTI0LTQxNzAtOTYwNi1iYmEwM2ExNmI3NDQiLCJleHAiOjE3Njk3NzcxNzQsImlkIjoiMiIsIm5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW4xMjNAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIn0.27grAgwUuOX7eevD3ZJRSObWBWFWrKRIB_quBnudoEc",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n   \"category_id\": \r\n\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/category/delete",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "category",
+                    "delete"
+                  ],
+                  "query": [
+                    {
+                      "key": "",
+                      "value": null,
+                      "type": "text",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "user",
+          "item": [
+            {
+              "name": "ListUser",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2OTc3NTMxOCwianRpIjoiNjUwYTI0NWEtYTQxNy00MWU5LWIzMzMtMTM1MTYxMGQzOGMwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3Njk3NzUzMTgsImNzcmYiOiI2OWE5NTVkNC05NDEzLTQyZTUtOWYzYy1hZjEwMjczMjJiMWUiLCJleHAiOjE3Njk3NzYyMTgsImlkIjoiMiIsIm5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW4xMjNAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIn0.MeELfHkyb97rdqw8gal1cGuul-jBhiHSbyVnR3Gqt8g",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000//api/admin/users/list",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "",
+                    "api",
+                    "admin",
+                    "users",
+                    "list"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "CreateUser",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2OTc3NDc1OCwianRpIjoiODBiMzExMmUtYzY1NS00MTQyLTg0YmUtMDA4MjhlOTZiNzFlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjUiLCJuYmYiOjE3Njk3NzQ3NTgsImNzcmYiOiJlMTBmMzg4Yy00ODEzLTRmODgtYjBhMy03YmY1YTIwMDUwMDYiLCJleHAiOjE3Njk3NzU2NTgsImlkIjoiNSIsIm5hbWUiOiJqYXkiLCJlbWFpbCI6ImpheTEyM0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4ifQ.Xp_Pg8nmSNQoeX7j7-F4KcDqvOUOhEz93tuq1fcszUU",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \r\n  \"name\": \"Jomw\",\r\n  \"email\": \"johns@gmail.com\",\r\n  \"password\": \"123456\",\r\n  \"role\": \"user\"\r\n\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/admin/users/create",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "admin",
+                    "users",
+                    "create"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "UpdateUser",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2OTc3NTA5NywianRpIjoiZGYxOWIyZDgtN2QzMS00OTdmLWEzNzktMmVlMDI3ODlmMTY5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjUiLCJuYmYiOjE3Njk3NzUwOTcsImNzcmYiOiIyM2VjYjVhNi04YWQwLTQ2N2ItYjlkMy02MzgyNmRiMjc5MDMiLCJleHAiOjE3Njk3NzU5OTcsImlkIjoiNSIsIm5hbWUiOiJqYXkiLCJlbWFpbCI6ImpheTEyM0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4ifQ.bWTr0xtx0gDNHvNLx8s1lGVAa74z0yiT9LAFabDYgrc",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"John\",\r\n    \"email\": \"johdn2@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"role\": \"user\"\r\n   \r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/admin/users/update/2",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "admin",
+                    "users",
+                    "update",
+                    "2"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "DeleteUser",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2OTc3NTA5NywianRpIjoiZGYxOWIyZDgtN2QzMS00OTdmLWEzNzktMmVlMDI3ODlmMTY5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjUiLCJuYmYiOjE3Njk3NzUwOTcsImNzcmYiOiIyM2VjYjVhNi04YWQwLTQ2N2ItYjlkMy02MzgyNmRiMjc5MDMiLCJleHAiOjE3Njk3NzU5OTcsImlkIjoiNSIsIm5hbWUiOiJqYXkiLCJlbWFpbCI6ImpheTEyM0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4ifQ.bWTr0xtx0gDNHvNLx8s1lGVAa74z0yiT9LAFabDYgrc",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"user_id\": \"\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/admin/users/delete",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "",
+                    "api",
+                    "admin",
+                    "users",
+                    "delete"
+                  ],
+                  "query": [
+                    {
+                      "key": "",
+                      "value": null,
+                      "type": "text",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FrontPanel",
+      "item": [
+        {
+          "name": "Cart",
+          "item": [
+            {
+              "name": "ListCart",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2OTc3OTE2MywianRpIjoiZjk2ZTAxN2UtZTE4MC00YzBlLTgyMmYtMDU2MTczOTAwMGVmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3Njk3NzkxNjMsImNzcmYiOiI0NzAzYjJhZC1jODE3LTQxNGQtOTlkNi1hN2U1NTU1MzdmY2MiLCJleHAiOjE3Njk3ODAwNjMsImlkIjoiMSIsIm5hbWUiOiJqYXkiLCJlbWFpbCI6ImpheTEyM0BnbWFpbC5jb20iLCJyb2xlIjoidXNlciJ9.o2H5f_sZMqZu0Zo2UoK8DbvDqFyoLj4ZGHFH-uPQyPs",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/cart",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "cart"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "CreateCart",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2OTc3OTE2MywianRpIjoiZjk2ZTAxN2UtZTE4MC00YzBlLTgyMmYtMDU2MTczOTAwMGVmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3Njk3NzkxNjMsImNzcmYiOiI0NzAzYjJhZC1jODE3LTQxNGQtOTlkNi1hN2U1NTU1MzdmY2MiLCJleHAiOjE3Njk3ODAwNjMsImlkIjoiMSIsIm5hbWUiOiJqYXkiLCJlbWFpbCI6ImpheTEyM0BnbWFpbC5jb20iLCJyb2xlIjoidXNlciJ9.o2H5f_sZMqZu0Zo2UoK8DbvDqFyoLj4ZGHFH-uPQyPs",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"user_id\": \"1\",\r\n    \"product_id\":\"2\" ,\r\n    \"quantity\": \"2\"\r\n\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/cart/add",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "cart",
+                    "add"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "UpdateCart",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2OTc3NTA5NywianRpIjoiZGYxOWIyZDgtN2QzMS00OTdmLWEzNzktMmVlMDI3ODlmMTY5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjUiLCJuYmYiOjE3Njk3NzUwOTcsImNzcmYiOiIyM2VjYjVhNi04YWQwLTQ2N2ItYjlkMy02MzgyNmRiMjc5MDMiLCJleHAiOjE3Njk3NzU5OTcsImlkIjoiNSIsIm5hbWUiOiJqYXkiLCJlbWFpbCI6ImpheTEyM0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4ifQ.bWTr0xtx0gDNHvNLx8s1lGVAa74z0yiT9LAFabDYgrc",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"John\",\r\n    \"email\": \"johdn2@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"role\": \"user\"\r\n   \r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/admin/users/update/2",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "admin",
+                    "users",
+                    "update",
+                    "2"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "DeleteCart",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2OTc3NTA5NywianRpIjoiZGYxOWIyZDgtN2QzMS00OTdmLWEzNzktMmVlMDI3ODlmMTY5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjUiLCJuYmYiOjE3Njk3NzUwOTcsImNzcmYiOiIyM2VjYjVhNi04YWQwLTQ2N2ItYjlkMy02MzgyNmRiMjc5MDMiLCJleHAiOjE3Njk3NzU5OTcsImlkIjoiNSIsIm5hbWUiOiJqYXkiLCJlbWFpbCI6ImpheTEyM0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4ifQ.bWTr0xtx0gDNHvNLx8s1lGVAa74z0yiT9LAFabDYgrc",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"user_id\": \"\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/admin/users/delete",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "",
+                    "api",
+                    "admin",
+                    "users",
+                    "delete"
+                  ],
+                  "query": [
+                    {
+                      "key": "",
+                      "value": null,
+                      "type": "text",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "CheckOut",
+          "item": [
+            {
+              "name": "ListOrder",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2OTc3NTMxOCwianRpIjoiNjUwYTI0NWEtYTQxNy00MWU5LWIzMzMtMTM1MTYxMGQzOGMwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3Njk3NzUzMTgsImNzcmYiOiI2OWE5NTVkNC05NDEzLTQyZTUtOWYzYy1hZjEwMjczMjJiMWUiLCJleHAiOjE3Njk3NzYyMTgsImlkIjoiMiIsIm5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW4xMjNAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIn0.MeELfHkyb97rdqw8gal1cGuul-jBhiHSbyVnR3Gqt8g",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000//api/admin/users/list",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "",
+                    "api",
+                    "admin",
+                    "users",
+                    "list"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "CreateOrder",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2OTc3NDc1OCwianRpIjoiODBiMzExMmUtYzY1NS00MTQyLTg0YmUtMDA4MjhlOTZiNzFlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjUiLCJuYmYiOjE3Njk3NzQ3NTgsImNzcmYiOiJlMTBmMzg4Yy00ODEzLTRmODgtYjBhMy03YmY1YTIwMDUwMDYiLCJleHAiOjE3Njk3NzU2NTgsImlkIjoiNSIsIm5hbWUiOiJqYXkiLCJlbWFpbCI6ImpheTEyM0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4ifQ.Xp_Pg8nmSNQoeX7j7-F4KcDqvOUOhEz93tuq1fcszUU",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \r\n  \"name\": \"Jomw\",\r\n  \"email\": \"johns@gmail.com\",\r\n  \"password\": \"123456\",\r\n  \"role\": \"user\"\r\n\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/admin/users/create",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "admin",
+                    "users",
+                    "create"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "UpdateOrder",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2OTc3NTA5NywianRpIjoiZGYxOWIyZDgtN2QzMS00OTdmLWEzNzktMmVlMDI3ODlmMTY5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjUiLCJuYmYiOjE3Njk3NzUwOTcsImNzcmYiOiIyM2VjYjVhNi04YWQwLTQ2N2ItYjlkMy02MzgyNmRiMjc5MDMiLCJleHAiOjE3Njk3NzU5OTcsImlkIjoiNSIsIm5hbWUiOiJqYXkiLCJlbWFpbCI6ImpheTEyM0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4ifQ.bWTr0xtx0gDNHvNLx8s1lGVAa74z0yiT9LAFabDYgrc",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"John\",\r\n    \"email\": \"johdn2@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"role\": \"user\"\r\n   \r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/admin/users/update/2",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "admin",
+                    "users",
+                    "update",
+                    "2"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "DeleteOrder",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2OTc3NTA5NywianRpIjoiZGYxOWIyZDgtN2QzMS00OTdmLWEzNzktMmVlMDI3ODlmMTY5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjUiLCJuYmYiOjE3Njk3NzUwOTcsImNzcmYiOiIyM2VjYjVhNi04YWQwLTQ2N2ItYjlkMy02MzgyNmRiMjc5MDMiLCJleHAiOjE3Njk3NzU5OTcsImlkIjoiNSIsIm5hbWUiOiJqYXkiLCJlbWFpbCI6ImpheTEyM0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4ifQ.bWTr0xtx0gDNHvNLx8s1lGVAa74z0yiT9LAFabDYgrc",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"user_id\": \"\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/admin/users/delete",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "",
+                    "api",
+                    "admin",
+                    "users",
+                    "delete"
+                  ],
+                  "query": [
+                    {
+                      "key": "",
+                      "value": null,
+                      "type": "text",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "TrackOrder",
+          "item": [
+            {
+              "name": "Get TrackOrder",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2OTc3NTMxOCwianRpIjoiNjUwYTI0NWEtYTQxNy00MWU5LWIzMzMtMTM1MTYxMGQzOGMwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3Njk3NzUzMTgsImNzcmYiOiI2OWE5NTVkNC05NDEzLTQyZTUtOWYzYy1hZjEwMjczMjJiMWUiLCJleHAiOjE3Njk3NzYyMTgsImlkIjoiMiIsIm5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW4xMjNAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIn0.MeELfHkyb97rdqw8gal1cGuul-jBhiHSbyVnR3Gqt8g",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000//api/admin/users/list",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "",
+                    "api",
+                    "admin",
+                    "users",
+                    "list"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "register",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"\",\r\n    \"email\":\"\",\r\n    \"password\":\"\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/register",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"jay\",\r\n    \"password\":\"123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/login",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "token",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:5000/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "me"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "logout",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text",
+                "disabled": true
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/logout",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "logout"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
